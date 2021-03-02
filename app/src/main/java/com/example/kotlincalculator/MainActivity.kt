@@ -1,10 +1,9 @@
 package com.example.kotlincalculator
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import com.fathzer.soft.javaluator.DoubleEvaluator
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,40 +11,43 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
     }
     override fun onClick(v: View?) {
-        var textView = v as TextView
-        var resultTextView = findViewById<TextView>(R.id.resultTV)
+        val textView = v as TextView
+        val resultTextView = findViewById<TextView>(R.id.resultTV)
         var oldText = resultTextView.text.toString()
 
         when(textView.text.toString()){
             "DEL" -> {
-                if(oldText.length>0){
-                    var newText = oldText.substring(0,oldText.length-1)
-                    resultTextView.setText(newText)
+                if(oldText.isNotEmpty()){
+                    val newText = oldText.substring(0,oldText.length-1)
+                    resultTextView.text = newText
                 }
             }
-            ""->{resultTextView.setText(null)}
+            "C"->{
+                resultTextView.text=null
+            }
             "="->{
-                var evaluator = DoubleEvaluator()
-               //  var expression = resultTextView.text.replace()
-                var result = evaluator.evaluate(resultTextView.text.toString())
-                resultTextView.setText(result.toString())
+                val evaluator = CustomDoubleEvaluator()
+                val result = evaluator.evaluate(resultTextView.text.toString())
+                resultTextView.text = result.toString()
 
             }
             else->{
-                var toAppendString = textView.text.toString()
+                val toAppendString = textView.text.toString()
                 if(isOperator(toAppendString[0])&&isOperator(oldText[oldText.length-1])){
                     oldText = oldText.substring(0,oldText.length-1)
                 }
-                var newText = oldText+toAppendString
-                resultTextView.setText(newText)
+                val newText = oldText+toAppendString
+                resultTextView.text = newText
             }
         }
     }
 
-    public fun isOperator(c:Char):Boolean{
-        when(c){
-        'X','x','*','/','+','-' ->{return true}
-            else -> return false
+     private fun isOperator(c:Char):Boolean{
+        return when(c){
+            '^',')','(','*','/','+','-' ->{
+                true
+            }
+            else -> false
         }
     }
 }
