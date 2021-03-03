@@ -26,7 +26,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 resultTextView.text=null
             }
             "="->{
-                val evaluator = CustomDoubleEvaluator()
+                val evaluator = CustomJavaDoubleEvaluator()
+//              val evaluator = CustomDoubleEvaluator() На котлине почемуто не работает
                 val result = evaluator.evaluate(resultTextView.text.toString())
                 resultTextView.text = result.toString()
 
@@ -44,7 +45,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
      private fun isOperator(c:Char):Boolean{
         return when(c){
-            '^',')','(','*','/','+','-' ->{
+           '^','*','/','+','-' ->{
                 true
             }
             else -> false

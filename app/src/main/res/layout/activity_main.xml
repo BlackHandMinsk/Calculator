@@ -18,121 +18,121 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="DEL"
+        android:text="@string/del_all_sym_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="C"
+        android:text="@string/del_one_sym_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="("
+        android:text="@string/brc_open"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text=")"
+        android:text="@string/brc_close"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="√"
+        android:text="@string/root_sym_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="^"
+        android:text="@string/pow_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="/"
+        android:text="@string/div_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="*"
+        android:text="@string/multiply_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="7"
+        android:text="@string/seven_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="8"
+        android:text="@string/eight_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="9"
+        android:text="@string/nine_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="-"
+        android:text="@string/minus_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="4"
+        android:text="@string/four_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="5"
+        android:text="@string/five_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="6"
+        android:text="@string/six_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="+"
+        android:text="@string/plus_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="1"
+        android:text="@string/one_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="2"
+        android:text="@string/two_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="3"
+        android:text="@string/three_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="="
+        android:text="@string/equal_btn"
         android:layout_rowSpan="2"
         style="@style/cell_style"
         />
@@ -140,13 +140,13 @@
         android:layout_width="1dp"
         android:layout_height="0dp"
         android:layout_columnSpan="2"
-        android:text="0"
+        android:text="@string/null_btn"
         style="@style/cell_style"
         />
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="."
+        android:text="@string/point_btn"
         style="@style/cell_style"
         />
 
