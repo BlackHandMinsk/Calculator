@@ -9,7 +9,7 @@
         <item name="android:gravity">bottom|right</item>
         <item name="android:text">0</item>
         <item name="android:textSize">50sp</item>
-        <item name="android:background">@color/white</item>
+        <item name="android:background">@color/background_color</item>
     </style>
     <style name="num_buttons_style">
         <item name="android:layout_rowWeight">1</item>

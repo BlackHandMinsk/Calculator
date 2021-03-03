@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import java.lang.reflect.InvocationTargetException
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,24 +29,34 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             "="->{
                 val evaluator = CustomJavaDoubleEvaluator()
 //              val evaluator = CustomDoubleEvaluator() На котлине почемуто не работает
-                val result = evaluator.evaluate(resultTextView.text.toString())
-                resultTextView.text = result.toString()
+                try {
+                    val result = evaluator.evaluate(resultTextView.text.toString())
+                    resultTextView.text = result.toString()
+                }catch (e:IllegalArgumentException){
+                   resultTextView.text = "EXCEPTION"
+        }
 
-            }
+        }
             else->{
                 val toAppendString = textView.text.toString()
-                if(isOperator(toAppendString[0])&&isOperator(oldText[oldText.length-1])){
-                    oldText = oldText.substring(0,oldText.length-1)
+            try {
+                if (isOperator(toAppendString[0]) && isOperator(oldText[oldText.length - 1])) {
+                    oldText = oldText.substring(0, oldText.length - 1)
                 }
-                val newText = oldText+toAppendString
+                val newText = oldText + toAppendString
                 resultTextView.text = newText
+            }catch (c:StringIndexOutOfBoundsException){
+                resultTextView.text = "EXCEPTION"
+            }catch (f:InvocationTargetException){
+                resultTextView.text = "EXCEPTION"
+            }
             }
         }
     }
 
      private fun isOperator(c:Char):Boolean{
         return when(c){
-           '^','*','/','+','-' ->{
+           '.','√','(',')','^','*','/','+','-' ->{
                 true
             }
             else -> false
