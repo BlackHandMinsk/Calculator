@@ -11,9 +11,7 @@ public class CustomJavaDoubleEvaluator extends DoubleEvaluator {
     private static final Parameters PARAMS;
 
     static {
-        // Gets the default DoubleEvaluator's parameters
         PARAMS = DoubleEvaluator.getDefaultParameters();
-        // add the new sqrt function to these parameters
         PARAMS.add(SQRT);
     }
 
@@ -24,10 +22,8 @@ public class CustomJavaDoubleEvaluator extends DoubleEvaluator {
     @Override
     protected Double evaluate(Function function, Iterator<Double> arguments, Object evaluationContext) {
         if (function == SQRT) {
-            // Implements the new function
             return Math.sqrt(arguments.next());
         } else {
-            // If it's another function, pass it to DoubleEvaluator
             return super.evaluate(function, arguments, evaluationContext);
         }
     }

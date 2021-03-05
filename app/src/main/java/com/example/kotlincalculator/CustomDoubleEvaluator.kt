@@ -7,7 +7,6 @@ import kotlin.math.sqrt
 
 class CustomDoubleEvaluator : DoubleEvaluator(PARAMS) {
     companion object {
-
         private val SQRT = Function("√", 1)
         private var PARAMS: Parameters?= null
         init {
